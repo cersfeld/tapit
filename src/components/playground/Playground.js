@@ -3,16 +3,17 @@ import React from 'react';
 import IntroCountdown from './IntroCountdown';
 import GameWithCountdown from './GameWithCountdown';
 import AddHighscore from './AddHighscore';
-
-const PATH_INTRO = 'intro';
-const PATH_GAME = 'game';
-const PATH_ADD_HIGHSCORE = 'add_highscore';
+import {
+    PLAYGROUND_INTRO,
+    PLAYGROUND_GAME,
+    PLAYGROUND_ADD_HIGHSCORE,
+} from '../../constants/pathnames';
 
 export default class Playground extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePath: PATH_INTRO,
+            activePath: PLAYGROUND_INTRO,
         };
     }
 
@@ -30,29 +31,29 @@ export default class Playground extends React.Component {
         const { onPressGoToMenu } = this.props;
 
         switch (this.state.activePath) {
-            case PATH_ADD_HIGHSCORE:
+            case PLAYGROUND_ADD_HIGHSCORE:
                 return (
                     <AddHighscore
                         secondsLeft={this.state.secondsLeft}
                         onHighscoreSaved={onPressGoToMenu}
                     />
                 );
-            case PATH_GAME:
+            case PLAYGROUND_GAME:
                 return (
                     <GameWithCountdown
                         onGameFinishedSuccesfully={(parameters) => {
                             this.onGameFinishedSuccesfully(parameters);
-                            this.navigateToPath(PATH_ADD_HIGHSCORE);
+                            this.navigateToPath(PLAYGROUND_ADD_HIGHSCORE);
                         }}
                         onGameFinishedWihtoutSuccess={onPressGoToMenu}
                     />
                 );
-            case PATH_INTRO:
+            case PLAYGROUND_INTRO:
             default:
                 return (
                     <IntroCountdown
                         onPressGoToMenu={onPressGoToMenu}
-                        onCountdownEnd={() => this.navigateToPath(PATH_GAME)}
+                        onCountdownEnd={() => this.navigateToPath(PLAYGROUND_GAME)}
                     />
                 );
         }
