@@ -1,0 +1,46 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1,
+        "VariableDeclarator": 1
+      }
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    // JSX & React
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
+    "react/style-prop-object": "off",
+    "react/no-string-refs": "off",
+    "react/sort-comp": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/img-has-alt": "off",
+  }
+}
