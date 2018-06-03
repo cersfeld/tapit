@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     },
 });
 
+/* eslint-disable react/no-array-index-key */
 export default class Game extends React.Component {
     constructor(props) {
         super(props);

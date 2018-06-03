@@ -26,6 +26,7 @@
       }
     ],
     // JSX & React
+    "react/prefer-stateless-function": "off",
     "react/require-default-props": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",

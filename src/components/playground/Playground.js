@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import IntroCountdown from './IntroCountdown';
 import GameWithCountdown from './GameWithCountdown';
 import AddHighscore from './AddHighscore';
-
 
 const PATH_INTRO = 'intro';
 const PATH_GAME = 'game';
@@ -18,7 +16,6 @@ export default class Playground extends React.Component {
         };
     }
 
-
     onGameFinishedSuccesfully = ({ secondsLeft }) => {
         this.setState({
             secondsLeft,
@@ -27,8 +24,7 @@ export default class Playground extends React.Component {
 
     navigateToPath = (path) => {
         this.setState({ activePath: path });
-    };
-
+    }
 
     render() {
         const { onPressGoToMenu } = this.props;
