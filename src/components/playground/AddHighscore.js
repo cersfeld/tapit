@@ -29,7 +29,7 @@ export default class AddHighscore extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>{`Sie haben ${this.props.secondsLeft} Sekunden benötigt. Glückwünsch!`}</Text>
+                <Text>{`Sie hatten ${this.props.secondsLeft} Sekunden übrig. Glückwünsch!`}</Text>
                 <TextInput
                     style={{ height: 40 }}
                     placeholder="Ihr Name"

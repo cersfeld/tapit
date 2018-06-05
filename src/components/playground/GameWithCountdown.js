@@ -27,6 +27,7 @@ export default class GameWithCountdown extends React.Component {
                     {({ secondsLeft }) => (
                         <View style={styles.container}>
                             <Text>{`Noch ${secondsLeft} Sekunden`}</Text>
+                            <Text>Klicke die Zahlen in der richtigen Reihenfolge an, von der kleinsten angefangen.</Text>
                             <Game
                                 secondsLeft={secondsLeft}
                                 onGameFinishedWihtoutSuccess={onGameFinishedWihtoutSuccess}
