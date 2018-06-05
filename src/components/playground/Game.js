@@ -68,7 +68,7 @@ export default class Game extends React.Component {
         if (gameFinisehdSuccesfully) {
             this.props.onGameFinishedSuccesfully();
         } else {
-            this.props.onGameFinishedWihtoutSuccess();
+            this.props.onGameFinishedWithoutSuccess();
         }
     };
 
@@ -125,5 +125,5 @@ export default class Game extends React.Component {
 
 Game.propTypes = {
     onGameFinishedSuccesfully: PropTypes.func.isRequired,
-    onGameFinishedWihtoutSuccess: PropTypes.func.isRequired,
+    onGameFinishedWithoutSuccess: PropTypes.func.isRequired,
 };

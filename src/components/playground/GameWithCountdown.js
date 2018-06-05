@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
 
 export default class GameWithCountdown extends React.Component {
     render() {
-        const { onGameFinishedWihtoutSuccess, onGameFinishedSuccesfully } = this.props;
+        const { onGameFinishedWithoutSuccess, onGameFinishedSuccesfully } = this.props;
         return (
             <View style={styles.container}>
                 <Countdown
-                    onCountdownEnd={onGameFinishedWihtoutSuccess}
+                    onCountdownEnd={onGameFinishedWithoutSuccess}
                     seconds={20}
                 >
                     {({ secondsLeft }) => (
@@ -30,7 +30,7 @@ export default class GameWithCountdown extends React.Component {
                             <Text>Klicke die Zahlen in der richtigen Reihenfolge an, von der kleinsten angefangen.</Text>
                             <Game
                                 secondsLeft={secondsLeft}
-                                onGameFinishedWihtoutSuccess={onGameFinishedWihtoutSuccess}
+                                onGameFinishedWithoutSuccess={onGameFinishedWithoutSuccess}
                                 onGameFinishedSuccesfully={parameters =>
                                     onGameFinishedSuccesfully({ ...parameters, secondsLeft })}
                             />
@@ -44,5 +44,5 @@ export default class GameWithCountdown extends React.Component {
 
 GameWithCountdown.propTypes = {
     onGameFinishedSuccesfully: PropTypes.func.isRequired,
-    onGameFinishedWihtoutSuccess: PropTypes.func.isRequired,
+    onGameFinishedWithoutSuccess: PropTypes.func.isRequired,
 };
