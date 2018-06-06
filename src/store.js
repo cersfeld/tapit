@@ -8,7 +8,7 @@ export const getHighscores = () => AsyncStorage
 export const createHighscoreEntry = (playerName, seconds) =>
     getHighscores().then((highscores) => {
         const nextHighscore = (highscores || [])
-            .concat([{ playerName, seconds }])
-            .sort((entry1, entry2) => entry1.seconds - entry2.seconds);
+            .concat([{ playerName, seconds, finished: new Date() }])
+            .sort((entry1, entry2) => entry2.seconds - entry1.seconds);
         return AsyncStorage.setItem(HIGHSCORE_KEY, JSON.stringify(nextHighscore));
     });
