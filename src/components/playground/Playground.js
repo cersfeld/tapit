@@ -45,7 +45,7 @@ export default class Playground extends React.Component {
                             this.onGameFinishedSuccesfully(parameters);
                             this.navigateToPath(PLAYGROUND_ADD_HIGHSCORE);
                         }}
-                        onGameFinishedWihtoutSuccess={onPressGoToMenu}
+                        onGameFinishedWithoutSuccess={onPressGoToMenu}
                     />
                 );
             case PLAYGROUND_INTRO:

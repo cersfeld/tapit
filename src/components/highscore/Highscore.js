@@ -38,6 +38,7 @@ export default class Highscore extends Component {
                     renderItem={({ item }) =>
                         <Text style={styles.item}>{`${item.seconds} Sekunden, ${item.playerName}`}</Text>
                     }
+                    keyExtractor={({ finished }) => finished}
                 />
             </View>
         );
