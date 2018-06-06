@@ -3,10 +3,12 @@ import React from 'react';
 import IntroCountdown from './IntroCountdown';
 import GameWithCountdown from './GameWithCountdown';
 import AddHighscore from './AddHighscore';
+import GameOver from './GameOver';
 import {
     PLAYGROUND_INTRO,
     PLAYGROUND_GAME,
     PLAYGROUND_ADD_HIGHSCORE,
+    PLAYGROUND_GAMEOVER,
 } from '../../constants/pathnames';
 
 export default class Playground extends React.Component {
@@ -38,6 +40,12 @@ export default class Playground extends React.Component {
                         onHighscoreSaved={onPressGoToMenu}
                     />
                 );
+            case PLAYGROUND_GAMEOVER:
+                return (
+                    <GameOver
+                        onPressGoToMenu={onPressGoToMenu}
+                    />
+                );
             case PLAYGROUND_GAME:
                 return (
                     <GameWithCountdown
@@ -45,7 +53,7 @@ export default class Playground extends React.Component {
                             this.onGameFinishedSuccesfully(parameters);
                             this.navigateToPath(PLAYGROUND_ADD_HIGHSCORE);
                         }}
-                        onGameFinishedWithoutSuccess={onPressGoToMenu}
+                        onGameFinishedWithoutSuccess={() => this.navigateToPath(PLAYGROUND_GAMEOVER)}
                     />
                 );
             case PLAYGROUND_INTRO:
